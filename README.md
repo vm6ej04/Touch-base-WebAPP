@@ -3,6 +3,8 @@ Touch-base-WebAPP
 
 WebAPP using touch gestures
 
+
+WIP demo  http://bigkdesign.com/flash
 ------------------------
 12 Nov 2014
 ------------------------
