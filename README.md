@@ -1,7 +1,7 @@
 Touch-base-WebAPP
 =================
 
-WebAPP using touch gestures- WIP demo  http://bigkdesign.com/flash
+WebAPP using touch gestures- WIP demo  http://bigkdesign.com/flash (iOS only..don't know why Android doesn't work)
 
 
 
