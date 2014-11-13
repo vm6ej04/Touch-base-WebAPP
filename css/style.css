@@ -1,6 +1,24 @@
-.co-ord-offset,.co-ord-last-touched,.co-ord{
+.wrapper{
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+
+#blocker{
+	z-index: 901;
+	position: absolute;
+	background-color: black;
+	opacity: 0;
+	display: none;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.co-ord-offset,.co-ord-last-touched,.co-ord, .digit, .dist-bl, .ang-bl{
 	position: relative;
-	z-index: 9999;
+	z-index: 1200;
 	cursor: default;
 	-moz-user-select: none; 
 	-khtml-user-select: none; 
@@ -9,15 +27,22 @@
 }
 
 #object{
+	display: none;
+	opacity:1;
+	z-index: 9999;
 	top: 50%;
 	left: 50%;
 	-webkit-transform:translate(-50%, -50%);
 	transform:translate(-50%, -50%);
 	width: 100px;
 	height: 100px;
-	border: solid white 5px;
+	border: solid red 5px;
 	border-radius: 50%;
-	position: absolute;
+	position: fixed;
+	-moz-user-select: none; 
+	-khtml-user-select: none; 
+	-webkit-user-select: none; 
+	-o-user-select: none; 
 }
 #object span{
 	top: 50%;
@@ -27,8 +52,88 @@
 	position: absolute;
 	color: white;
 	font-size: 3em;
+	-moz-user-select: none; 
+	-khtml-user-select: none; 
+	-webkit-user-select: none; 
+	-o-user-select: none; 
 }
 
 body{
-	background-color:rgb(0,200,255);
+	padding-top: 20px;
+	background-color: black;
+}
+
+#speedCtrl{
+	z-index: 999;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	background-color: rgba(255,255,255,0.5);
+	width: 100px;
+	height: 100px;
+	min-width: 50px;
+	min-height: 50px;
+	-moz-user-select: none; 
+	-khtml-user-select: none; 
+	-webkit-user-select: none; 
+	-o-user-select: none;
+}
+#angle-pointer{
+	z-index: 998;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 30px;
+	transform-origin: 50% 100%;
+	-webkit-transform-origin: 50% 100%;
+	-webkit-transform: translateX(-50%) rotate(95deg);
+	/*background-color: red;
+	width: 5px;
+	height: 50px;
+	-webkit-transform: rotate(0deg);
+	-webkit-transform-origin: 0% 100%;
+	-webkit-transform:translate(-50%, 100%);
+	transform:translate(-50%, -200%);*/
+	-moz-user-select: none; 
+	-khtml-user-select: none; 
+	-webkit-user-select: none; 
+	-o-user-select: none;
+}
+
+#startBtn{
+	z-index: 999;
+	position: fixed;
+	bottom: 0;
+	right: 0;
+	background-color: rgba(255,255,255,0.5);
+	width: 100px;
+	height: 100px;
+	min-width: 50px;
+	min-height: 50px;
+	-moz-user-select: none; 
+	-khtml-user-select: none; 
+	-webkit-user-select: none; 
+	-o-user-select: none;
+}
+
+#overlay{
+	z-index: 900;
+	position: absolute;
+	background-color: rgb(220,220,220);
+	opacity: 1;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+#colorCtrl{
+	z-index: 800;
+	position: absolute;
+	display: block;
+	background-color: rgb(0,200,255);
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
 }

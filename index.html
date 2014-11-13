@@ -2,24 +2,40 @@
 <head>
 	<title></title>
 	<meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="viewport" content="width=device-width,   initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-title" content="Flash">
 	<link href='http://fonts.googleapis.com/css?family=Roboto:400,300,700' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 
 </head>
 <body>
-	<div id="object"><span>+</span></div>
-	<div id="speedCtrl"></div>
-	<div id="start"></div>
-	<div class="co-ord">You haven't tap on the screen yet!</div>
-	<div class="co-ord-last-touched">Last touched co-ordinate (0,0)</div>
-	<div class="co-ord-offset">X moved 0, Y moved 0</div>
-	<div class="digit">RGB(0,200,255)</div>
-	<div id="debug"></div>
 
-<script src="//cdn.jsdelivr.net/velocity/1.1.0/velocity.min.js"></script>
-<script src="js/jquery-2.1.1.min.js"></script>
+	<div class="wrapper">
+		<div id="blocker"></div>	
+		<div id="overlay"></div>
+		<div id="colorCtrl"></div>
+		
+		<div id="object"><span>+</span></div>
+		<div id="speedCtrl"></div>
+		<div id="startBtn"></div>
+
+		<div class="co-ord">You haven't tap on the screen yet!</div>
+		<div class="co-ord-last-touched">Last touched co-ordinate (0,0)</div>
+		<div class="co-ord-offset">X moved 0, Y moved 0</div>
+		<div class="digit">RGB(0,200,255)</div>
+		<div class="dist-bl">Distance from bottom left:</div>
+		<div class="ang-bl">Angle:</div>
+		<div id="debug"></div>
+		<svg id="angle-pointer" x="0px" y="0px"
+		 viewBox="0 0 30 200" enable-background="new 0 0 30 200" xml:space="preserve">
+		 <polygon fill="#FF0000" points="0.4,0.7 29.6,0.7 15,32.9 "/>
+		</svg>
+	</div>
+
+<script src="js/jquery-1.11.1.min.js"></script>
+<script src="js/velocity.min.js"></script>
 <script src="js/main.js"></script>
 </body>
 </html>
