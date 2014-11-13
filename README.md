@@ -11,6 +11,6 @@ WebAPP using touch gestures- WIP demo  http://bigkdesign.com/flash (iOS only..do
 First commit, basic X,Y coordinate detection/ X,Y offset calculation/ Changing RGB value base on X offset/ Touch-hold actions
 
 ------------------------
-12 Nov 2014
+13 Nov 2014
 ------------------------
 Second commit, background colour change BUG fixed, flashing functionality added, angle/distance calculation implemented, flashing speed control added, included velocity.js
