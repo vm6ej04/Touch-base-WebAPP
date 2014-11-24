@@ -1,84 +1,41 @@
-<html manifest="flash.appcache">
+<html>
 <head>
-	<title>Flashy</title>
-	<link rel="stylesheet" href="">
+	<title></title>
 	<meta name="apple-mobile-web-app-capable" content="yes">
 	<meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="viewport" content=" initial-scale=1, maximum-scale=1, user-scalable=no">
-    <meta name="apple-mobile-web-app-title" content="Flashy">
-    <link rel="apple-touch-icon" href="apple-touch-icon-iphone.png">
-	<link rel="apple-touch-icon" sizes="76x76" href="touch-icon-ipad.png">
-	<link rel="apple-touch-icon" sizes="120x120" href="touch-icon-iphone-retina.png">
-	<link rel="apple-touch-icon" sizes="152x152" href="touch-icon-ipad-retina.png">
-    <link rel="apple-touch-startup-image" href="Default-568h@2x.png" sizes="640x1096">
-	<!-- <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,700' rel='stylesheet' type='text/css'> -->
-	<link rel="stylesheet" type="text/css" charset="utf-8" href="css/style.css">
-<!-- 	<link type="text/cache-manifest" href="cache.manifest"> -->
-
-
+    <meta name="viewport" content="width=device-width,   initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-title" content="Flash">
+	<link href='http://fonts.googleapis.com/css?family=Roboto:400,300,700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
 
 </head>
 <body>
 
 	<div class="wrapper">
-		<div id="prompt-message">
-			<img src="prompt-icon.png" alt="icon">
-			<p>Add Flashy to your homesreen for optimised APP experience!</p>
-			<div class="arrow-down"></div>
-		</div>
-		<div id="intro"><p>TAP TO START</p></div>
-		<div class="centered">
-			<p>Try TAP and HOLD the button you just touched</p>
-			<img id="colorTut" src="img/colour-change-tutorial.svg" alt="tutorial">
-		</div>
-		<div id="speedometer"><p>Flashing Speed</p><p class="percentage">50%</p><div class="base"></div></div>	
-<!-- 		<div id="overlay"></div> -->
-		<div id="gradient"></div>
-		<div id="colorLayer"></div>
+		<div id="blocker"></div>	
+		<div id="overlay"></div>
 		<div id="colorCtrl"></div>
+		
 		<div id="object"><span>+</span></div>
 		<div id="speedCtrl"></div>
 		<div id="startBtn"></div>
 
-
-		<div id="debug">
-			<div class="co-ord">You haven't tap on the screen yet!</div>
-			<div class="co-ord-last-touched">Last touched co-ordinate (0,0)</div>
-			<div class="co-ord-offset">X moved 0, Y moved 0</div>
-			<div class="digit">RGB(0,200,255)</div>
-			<div class="dist-bl">Distance from bottom left:</div>
-			<div class="ang-bl">Angle:</div>
-			<div class="percentage">Speed:</div>
-		</div>
-		<div class="rotate45">
-			<svg id="speed-arrow" x="0px" y="0px" viewBox="0 0 74 270" enable-background="new 0 0 74 270" xml:space="preserve">
-				<polygon fill="#FFFFFF" points="73.9,37 37,0.1 0.1,37 3.7,40.8 34.1,10.2 34.1,122 40.1,122 40.1,10.5 70.3,40.8 "/>
-			</svg>
-		</div>
-		<svg id="angle-pointer" x="0px" y="0px" viewBox="0 0 30 182" enable-background="new 0 0 30 182" xml:space="preserve">
-		 <circle fill="#000000" opacity="0.8" cx="15" cy="15.6" r="15"/>
-		</svg>
-		<svg id="speed-inner-ring" x="0px" y="0px" viewBox="0 0 150 150" enable-background="new 0 0 150 150" xml:space="preserve">
-			<path opacity="0.5" d="M149.9,150C149.9,67,82.1,0,0.1,0c0,0,0,67,0,150H149.9z"/>
-		</svg>
-		<svg id="speed-outter-ring" x="0px" y="0px" viewBox="0 0 185 185" enable-background="new 0 0 185 185" xml:space="preserve">
-
-			<path width="50px" height="50px" fill="#FFFFFF" opacity="0.5" d="M0.1,36.8c0,0-0.1-0.1-0.1-0.1c81.8,0,148.1,66.2,148.1,148.2h36.7c0-102-82.8-184.9-184.8-184.9 c0,0,0.1,0.1,0.1,0.1V36.8z"/>
-
-		</svg>
-		<svg id="start-icon" x="0px" y="0px" viewBox="0 0 42 68" enable-background="new 0 0 42 68" xml:space="preserve">
-			<path fill="#FFFFFF" d="M29,0.9L1.1,31.3c-1.3,1.3-0.7,3.6,1.1,4l19.2,5.5L11.1,65.1c-0.8,1.9,1.8,3.5,3.1,1.9l26.7-30.9 c1.3-1.6,0.6-4-1.4-4.6l-17.1-5.3l9.3-23.4C32.6,1.1,30.3-0.5,29,0.9z"/>
-		</svg>
-		<svg id="speed-icon" x="0px" y="0px" viewBox="0 0 70 70" enable-background="new 0 0 70 70" xml:space="preserve">
-			<path fill="#FFFFFF" d="M35,0C15.7,0,0,15.7,0,35s15.7,35,35,35s35-15.7,35-35S54.3,0,35,0z M58.7,56.8l-6.3-6.5 c-0.6-0.6-1.5-0.6-2.1-0.1s-0.6,1.5,0,2.1l6.3,6.3C50.8,63.9,43.3,67,35,67s-15.8-3.2-21.5-8.4l6.3-6.3c0.6-0.6,0.6-1.5,0-2.1 s-1.5-0.6-2.1,0l-6.3,6.6c-4.8-5.2-7.8-12.3-8.3-19.3H12c0.8,0,1.5-0.7,1.5-1.5s-0.7-1.5-1.5-1.5H3c0.2-8,3.3-15.3,8.3-20.8l6.3,6.2 c0.3,0.3,0.7,0.4,1.1,0.4s0.8-0.2,1.1-0.5c0.6-0.6,0.6-1.6,0-2.1l-7-6.3C18,6.6,24.6,3.5,31.6,3.1V12c0,0.8,0.7,1.5,1.5,1.5 s1.5-0.7,1.5-1.5V3c8,0.2,15.8,3.4,21.3,8.4c-9.1,6.4-24,17.4-25.7,19.1c-2.5,2.5-2.3,6.5,0.2,8.9s6.5,2.5,9,0 c1.7-1.7,12.7-16.8,19.1-25.8c5,5.5,8.2,12.9,8.5,20.9h-9c-0.8,0-1.5,0.7-1.5,1.5s0.7,1.5,1.5,1.5h8.9 C66.5,44.5,63.4,51.6,58.7,56.8z"/>
+		<div class="co-ord">You haven't tap on the screen yet!</div>
+		<div class="co-ord-last-touched">Last touched co-ordinate (0,0)</div>
+		<div class="co-ord-offset">X moved 0, Y moved 0</div>
+		<div class="digit">RGB(0,200,255)</div>
+		<div class="dist-bl">Distance from bottom left:</div>
+		<div class="ang-bl">Angle:</div>
+		<div id="debug"></div>
+		<svg id="angle-pointer" x="0px" y="0px"
+		 viewBox="0 0 30 200" enable-background="new 0 0 30 200" xml:space="preserve">
+		 <polygon fill="#FF0000" points="0.4,0.7 29.6,0.7 15,32.9 "/>
 		</svg>
 	</div>
 
 <script src="js/jquery-1.11.1.min.js"></script>
 <script src="js/velocity.min.js"></script>
-<script src="js/velocity.ui.js"></script>
-<script src="js/GSAP.js"></script>
 <script src="js/main.js"></script>
 </body>
 </html>
